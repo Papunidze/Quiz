@@ -7,18 +7,19 @@ const Home = (props) => {
 
   return (
     <div className="container">
-      <section className="button">
-        <div className="startBtn">
-          <button
-            className="raise btn"
-            style={{ display: btnShow }}
-            onClick={() => isShow(!isOpen)}
-          >
+      <section className="button" style={{ display: btnShow }}>
+        <div className="start__Menu">
+          <label htmlFor="inp" className="inp">
+            <input type="text" id="inp" placeholder="&nbsp;" />
+            <span className="label">name</span>
+            <span className="focus-bg"></span>
+          </label>
+          <button className="raise btn" onClick={() => isShow(!isOpen)}>
             Start
           </button>
         </div>
-        {isOpen && <Quiz />}
       </section>
+      {isOpen && <Quiz />}
     </div>
   );
 };

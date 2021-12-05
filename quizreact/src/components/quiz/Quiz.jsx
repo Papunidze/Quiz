@@ -113,6 +113,22 @@ const Quiz = () => {
       });
     }
   }
+  function generateCheckedColoro() {
+    let colorArr = [];
+    Question.map(
+      (element, index) =>
+        (colorArr[index] = "-") &&
+        element.check.map((e) =>
+          e === true ? (colorArr[index] = "+") : "none"
+        )
+    );
+    btn.map((cl) =>
+      colorArr[cl.key] === "+"
+        ? (cl.props.style.background = "green")
+        : (cl.props.style.background = "none")
+    );
+  }
+  generateCheckedColoro();
   let Show = !resetPage ? "none" : "block";
   return (
     <div className="Menu">
